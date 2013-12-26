@@ -1,0 +1,40 @@
+<div class="top-items">
+    <% for(var i = albums.length - 1; i >= 0; i--){ var album = albums[i]; %>
+        <div class="top-item">
+            <p class="top-item-name">
+                <%= i + 1 %>. '<%= album.album %>' by <%= album.artist %>
+            </p>
+            <p class="top-item-description">
+                 <%= album.description %>
+            </p>
+            <p class="top-item-image">
+                 <img src="<%= album.image %>" width="200" />
+            </p>
+            <p class="top-item-extra">
+                <div class="top-item-rdio">
+                    <a href="<%= album.rdio %>">Listen on Rdio</a>
+                </div>
+            <% if(album.soundcloud){ %>
+                <div class="top-item-soundcloud">
+                    <a href="<%= album.soundcloud %>">Listen on Soundcloud</a>
+                </div>
+            <% } %>
+            <% if(album.bandcamp){ %>
+                <div class="top-item-bandcamp">
+                    <a href="<%= album.bandcamp %>">Listen on Bandcamp</a>
+                </div>
+            <% } %>
+            <% if(album.twitter){ %>
+                <div class="top-item-twitter">
+                    <a href="https://twitter.com/<%= album.twitter %>">Follow on Twitter</a>
+                </div>
+            <% } %>
+            </p>
+            <p class="top-item-date">
+                <% var releaseDate = new Date(album.release_date); %>
+                <% var releaseDateStr = (releaseDate.getMonth() + 1)+"/"+releaseDate.getDate()+"/"+releaseDate.getFullYear()  %>
+                Release date: <%= releaseDateStr %>
+            </p>
+        </div>
+    <% } %>
+</div>
