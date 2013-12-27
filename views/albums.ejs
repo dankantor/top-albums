@@ -6,6 +6,9 @@
             </p>
             <p class="top-item-description">
                  <%= album.description %>
+                 <% var releaseDate = new Date(album.release_date); %>
+                 <% var releaseDateStr = (releaseDate.getMonth() + 1)+"/"+releaseDate.getDate()+"/"+releaseDate.getFullYear()  %>
+                 <span class="top-album-date">Released: <%= releaseDateStr %></span>
             </p>
             <p class="top-item-image">
                  <img src="<%= album.image %>" width="200" />
@@ -23,11 +26,6 @@
             <% if(album.twitter){ %>
                 <a href="https://twitter.com/<%= album.twitter %>">Follow on Twitter</a>
             <% } %>
-            </p>
-            <p class="top-item-date">
-                <% var releaseDate = new Date(album.release_date); %>
-                <% var releaseDateStr = (releaseDate.getMonth() + 1)+"/"+releaseDate.getDate()+"/"+releaseDate.getFullYear()  %>
-                Release date: <%= releaseDateStr %>
             </p>
         </div>
     <% } %>
