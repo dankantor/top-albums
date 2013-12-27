@@ -11,23 +11,17 @@
                  <img src="<%= album.image %>" width="200" />
             </p>
             <p class="top-item-extra">
-                <div class="top-item-rdio">
-                    <a href="<%= album.rdio %>">Listen on Rdio</a>
-                </div>
+            <% if(album.rdio){ %>
+                <a href="<%= album.rdio %>">Listen on Rdio</a> | 
+            <% } %>
             <% if(album.soundcloud){ %>
-                <div class="top-item-soundcloud">
-                    <a href="<%= album.soundcloud %>">Listen on Soundcloud</a>
-                </div>
+                <a href="<%= album.soundcloud %>">Listen on Soundcloud</a> | 
             <% } %>
             <% if(album.bandcamp){ %>
-                <div class="top-item-bandcamp">
-                    <a href="<%= album.bandcamp %>">Listen on Bandcamp</a>
-                </div>
+                <a href="<%= album.bandcamp %>">Listen on Bandcamp</a> | 
             <% } %>
             <% if(album.twitter){ %>
-                <div class="top-item-twitter">
-                    <a href="https://twitter.com/<%= album.twitter %>">Follow on Twitter</a>
-                </div>
+                <a href="https://twitter.com/<%= album.twitter %>">Follow on Twitter</a>
             <% } %>
             </p>
             <p class="top-item-date">
